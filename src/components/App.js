@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <>
-    <Modal show={show} onHide={handleClose}  size="lg">
+    <Modal show={show} onHide={handleClose}  size="lg" style={{marginTop:"10%"}}>
     <Modal.Header closeButton>
       <Modal.Title style={{color:"#ff2875"}}>Gift By So</Modal.Title>
     </Modal.Header>
