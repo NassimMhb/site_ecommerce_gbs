@@ -9,11 +9,29 @@ import ContentFooter from './ContentFooter';
 import GlobalStyles from './GlobalStyles';
 import { getPrintCart } from '../reducers';
 import { useSelector } from 'react-redux';
+import { Modal, Button} from 'react-bootstrap';
+import { Instagram } from 'react-bootstrap-icons';
 
 const App = () => {
+  const [show, setShow] = useState(true);
   const openCart = useSelector(getPrintCart);
+  const handleClose = () => setShow(false);
 
   return (
+    <>
+    <Modal show={show} onHide={handleClose}  size="lg">
+    <Modal.Header closeButton>
+      <Modal.Title style={{color:"#ff2875"}}>Gift By So</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+        <p style={{textAlign:"center", fontSize:20}}>Suivez nous sur Instagram <a href="https://www.instagram.com/giftbyso" target="_blank"><Instagram /> GiftBySo </a>pour être au courant de toute l'actualité de <br/><span style={{color:"#ff2875"}}>Gift By So</span> !</p>
+        <Modal.Footer>
+            <Button style={{backgroundColor:"#ff2875", borderColor:"#ff2875"}} onClick={handleClose}>
+              Fermer
+            </Button>
+          </Modal.Footer>
+      </Modal.Body>
+    </Modal>
     <Wrapper>
       <Header/>
       <div className="container">
@@ -29,6 +47,7 @@ const App = () => {
         </Footer>
       <GlobalStyles />
     </Wrapper>
+    </>
   );
 };
 

@@ -30,7 +30,7 @@ export const STORE_ITEMS = [
     id: 'brumeVelvet',
     title: 'Brume Victoria \' Secret Velvet Petals rosé',
     src: brumeVelvetSrc,
-    price: 999,
+    price: 1199,
   },
   {
     id: 'brumePink',
@@ -42,7 +42,7 @@ export const STORE_ITEMS = [
     id: 'bronzedCoconut',
     title: 'Eau Victoria \' Secret Bronzed Coconut',
     src:   bronzedCoconutSrc,
-    price: 999,
+    price: 1199,
   },
   {
     id: 'brumeChampPetals',
@@ -60,7 +60,7 @@ export const STORE_ITEMS = [
     id: 'detoxMaskClay',
     title: 'Detox Mask Clay Victoria \' Secret',
     src: detoxMaskClaySrc,
-    price: 999,
+    price: 1099,
   },
   {
     id: 'brumePopMist',
@@ -72,7 +72,7 @@ export const STORE_ITEMS = [
     id: 'coffretCadeau',
     title: 'Coffret cadeau à offrir Victoria \' Secret',
     src: coffretCadeauSrc,
-    price: 999,
+    price: 2299,
   },
   {
     id: 'brumePinkTide',
@@ -82,9 +82,9 @@ export const STORE_ITEMS = [
   },
   {
     id: 'farineAvoine',
-    title: 'Farine d\'avoine Victoria \' Secret',
+    title: 'Oat Scrub Victoria \' Secret',
     src: farineAvoineSrc,
-    price: 999,
+    price: 1099,
   },
   {
     id: 'brumeDesertPetals',
@@ -102,7 +102,7 @@ export const STORE_ITEMS = [
     id: 'cocoLotion',
     title: 'Crème Victoria \' Secret Coco Lotion',
     src: cocoLotionSrc,
-    price: 999,
+    price: 1199,
   },
   {
     id: 'brumeGoldenHoney',
@@ -114,7 +114,7 @@ export const STORE_ITEMS = [
     id: 'detoxMaskHoney',
     title: 'Detox Mask Honey Victoria \' Secret',
     src: detoxMaskHoneySrc,
-    price: 999,
+    price: 1099,
   },
   {
     id: 'brumePinkCoconut',
@@ -132,13 +132,13 @@ export const STORE_ITEMS = [
     id: 'oatLotion',
     title: 'Crème Victoria \' Secret Oat Lotion',
     src:   oatLotionSrc,
-    price: 999,
+    price: 1199,
   },
   {
     id: 'brumeStTropez',
     title: 'Brume Victoria \' Secret Pink ST. Tropez Beach',
     src: brumeStTropezSrc,
-    price: 999,
+    price: 1199,
   },
   {
     id: 'brumeBlushPalm',
@@ -148,9 +148,9 @@ export const STORE_ITEMS = [
   },
   {
     id: 'detoxMaskSmoothing',
-    title: 'Detox Mask Smoothing Victoria \' Secret',
+    title: 'Oat Mask Smoothing Victoria \' Secret',
     src: detoxMaskSmoothingSrc,
-    price: 999,
+    price: 1099,
   },
   {
     id: 'brumePinkLemonade',
@@ -168,6 +168,6 @@ export const STORE_ITEMS = [
     id: 'grapeFruitLotion',
     title: 'Lotion Victoria \' Secret Grapefruit Lotion',
     src:   grapeFruitLotionSrc,
-    price: 999,
+    price: 1199,
   },
 ];
