@@ -2,6 +2,8 @@ import produce from 'immer';
 
 const initialState = {
   items: {},
+  openCart: false,
+  keyword: '',
 };
 
 export default function cartReducer(state = initialState, action) {
@@ -40,10 +42,27 @@ export default function cartReducer(state = initialState, action) {
       return initialState;
     }
 
+    case 'PRINT_CART': {
+      return produce(state, draftState => {
+        draftState.openCart = !draftState.openCart;
+      });
+    }
+
+    case 'CHANGE_KEYWORD': {
+      const keyword = action;
+      return produce(state, draftState => {
+        draftState.keyword = keyword;
+      });
+
+    }
+
     default:
       return state;
   }
 }
+
+export const getPrintCart = state => state.openCart;
+export const getKeyword = state => state.keyword;
 
 export const getItemArray = state => Object.values(state.items);
 export const getSubtotal = state =>

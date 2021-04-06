@@ -5,21 +5,23 @@ import styled from 'styled-components';
 import { addItem } from '../actions';
 
 import Button from './Button';
-
+const truncate = (str) => {
+  return str.length > 41 ? str.substring(0, 44) + "..." : str;
+}
 const StoreItem = ({ id, title, src, price }) => {
+  const titleTruncate = truncate(title);
   const formattedPrice = new Intl.NumberFormat('fr-FR', {
     style: 'currency',
     currency: 'EUR',
   }).format(price / 100);
 
   const dispatch = useDispatch();
-
   return (
     <Wrapper>
       <ImageWrapper>
         <Image src={src} alt={`${title} sticker`} />
       </ImageWrapper>
-      <Title>{title}</Title>
+      <Title>{titleTruncate}</Title>
       <Button onClick={() => dispatch(addItem({ id, title, price }))}>
         Ajouter au panier — {formattedPrice}
       </Button>

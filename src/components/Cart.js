@@ -22,7 +22,19 @@ const Cart = () => {
   const handleClose = () => {setShow(false); setStep(0);}
   const handleShow = () => setShow(true); 
 
+  const [messageCommande, setMsg] = useState("test");
+
+  const chargerCommande = () => {
+    const msgTemp = messageCommande;
+    items.map((item) => (
+      setMsg(msgTemp +" - "+item.quantity+" "+item.title)
+     
+    ))
+
+  }
+
   const validateInformations = () => {
+    chargerCommande();
     if(step == 0 || step == 1)
       setStep(step+1);
     else if(step == 2)
@@ -40,7 +52,6 @@ const Cart = () => {
     e.preventDefault();
     emailjs.sendForm('service_z2vkhvr', 'template_puhzdsa', e.target, 'user_xWHQOtoi1f5PWIBR7dR1K')
       .then((result) => {
-        console.log("parti");
         setStep(2);
       }, (error) => {
         console.log(error.text);
@@ -154,7 +165,7 @@ const Cart = () => {
         <input hidden type="text" className="form-control" id="inputCity" placeholder="Paris" name="ville" value={ville}/>   
         <input hidden type="text" className="form-control" id="inputZip" placeholder="75008" name="code_postal" value={code_postal}/>
     
-        <input name="commandes" value={items} hidden/>
+        <input name="commandes" value={messageCommande} hidden/>
       </Modal.Body>
       <Modal.Footer>
       {step == 0 &&
@@ -210,7 +221,7 @@ const Wrapper = styled.section`
   position: sticky;
   top: 0;
   min-width: 300px;
-  height: 100vh;
+  height: 90vh;
   background: #FF2875;
   color: white;
   padding-top: 16px;
