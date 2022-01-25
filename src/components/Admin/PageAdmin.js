@@ -6,13 +6,13 @@ import './PageAdmin.css';
 
 const PageAdmin = () => {
 
-    const [isConnected, setIsConnected] = useState(true);
+    const [isConnected, setIsConnected] = useState(false);
     const [name, setName] = useState();
     const [password, setPassword] = useState();
     const [isIncorrect, setIsIncorrect] = useState(false);
 
     const checkConnexion = () => {
-        if (name === "So" && password === "Nassim2209") {
+        if (name === "So" && password === "Solafeed") {
             setIsConnected(true);
         }else{
             setIsIncorrect(true);
