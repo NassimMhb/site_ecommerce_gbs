@@ -17,6 +17,25 @@
     border-bottom: 2px dashed #ff2875;
 }
 
+.header-admin{
+    margin-top: 0px;
+    position: fixed;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ff8db6;
+    color: #fff;
+    font-family: Lobster,cursive;
+    font-weight: 300;
+    height: 88px;
+    width: 100%;
+    z-index: 99;
+    border-bottom: 2px dashed #ff2875;
+}
+
 .container{
     width: 100%;
     padding-top: 144px;
@@ -48,7 +67,7 @@
     color: #fff;
   }
 
-.header .main-title{
+.header-admin .main-title, .header .main-title{
 	-ms-flex: 1 1 20%;
 	    flex: 1 1 20%;
 	padding: 10px 58px;
@@ -169,5 +188,10 @@
 
 .noProduct{
 	color: #fff;
+	text-align: center;
+}
+
+.contentAdmin{
+	padding-top: 144px;
 	text-align: center;
 }
