@@ -32,7 +32,7 @@ const PageAdmin = () => {
                             <div className="fadeIn first mb-3 mt-3">
                                 <h2>Gift By So</h2>
                             </div>
-                            <input type="text" id="login" className="fadeIn second input" name="login" placeholder="Nom d'utilisateur" value={name} onChange={(e)=>setName(e.target.value)} />
+                            <input type="text" id="login" className="btnText fadeIn second input" name="login" placeholder="Nom d'utilisateur" value={name} onChange={(e)=>setName(e.target.value)} />
                             <input type="password" id="password" className="fadeIn third input" name="login" placeholder="Mot de passe" value={password} onChange={(e)=>setPassword(e.target.value)} />
                             <br />
                             <input type="submit" className="fadeIn fourth mt-3 input" value="Se connecter" onClick={checkConnexion} />

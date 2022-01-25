@@ -15,7 +15,7 @@ const CartItem = ({ item }) => {
   return (
     <Wrapper>
       <Header>
-        {item.title}
+        {item.nom}
         <CloseBtn onClick={() => dispatch(removeItem(item.id))}>
           <Icon icon={x} />
         </CloseBtn>

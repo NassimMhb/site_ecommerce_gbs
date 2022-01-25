@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 
 
-const Update = ({produit}) => {
+const Update = ({produit, refresh}) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {setShow(true)};
@@ -28,7 +28,6 @@ const Update = ({produit}) => {
 
     const updateProduct = async () => {
         let id = produit.id;
-        console.log("tess")
         const produitDoc = doc(db, "produits", id);
         const newFields = "";
         if(nomUpdate != null){
@@ -44,6 +43,7 @@ const Update = ({produit}) => {
             await updateDoc(produitDoc, newFields);
         }
         handleClose();
+        refresh();
       };
 
     return (

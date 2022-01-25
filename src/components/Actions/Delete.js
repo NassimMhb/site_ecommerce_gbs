@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 
 
-const Delete = (props) => {
+const Delete = ({produit, refresh}) => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -22,10 +22,11 @@ const Delete = (props) => {
 
     const deleteProduct = async () => {
         console.log("deletee")
-        let id = props.produit.id;
+        let id = produit.id;
         const produitDoc = doc(db, "produits", id);
         await deleteDoc(produitDoc);
         handleClose();
+        refresh();
     }
 
     return (

@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 
 
-const Create = (props) => {
+const Create = ({refresh}) => {
     const produitsCollection = collection(db, "produits");
 
     const [show, setShow] = useState(false);
@@ -50,6 +50,7 @@ const Create = (props) => {
     const addProduct = async () => {
         await addDoc(produitsCollection, { image: baseImage, nom: nom, prix: Number(prix), details: description });
         handleClose();
+        refresh();
     };
 
     return (
@@ -61,7 +62,7 @@ const Create = (props) => {
                 <Modal.Body>
                     <Row>
                         <Col>
-                            <Form.Label>Image : </Form.Label><br />
+                            <Form.Label>Image (taille conseillée : 400x400) : </Form.Label><br />
                             <input type="file" 
                                 onChange={(e) => {
                                     uploadImage(e);

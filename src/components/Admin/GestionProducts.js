@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import './GestionProducts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,13 +6,35 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Modal, Button, Form, Col, Row } from 'react-bootstrap';
 import Read from '../Actions/Read'
 import Create from '../Actions/Create'
+import { db } from "../../utils/firebaseConfig";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 
 const GestionProducts = () => {
+    const [listeProduits, setListeProduits] = useState([]);
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const produitsCollection = collection(db, "produits");
+
+    const getProduits = async () => {
+      const data = await getDocs(produitsCollection);
+      console.log("teststs")
+      setListeProduits(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    
+    useEffect(() => {
+      getProduits();
+    }, []);
 
     return (
         <>
@@ -22,7 +44,7 @@ const GestionProducts = () => {
                         <h5>Gestion des produits</h5>
                     </div>
                     <div className="ml-5">
-                        <Create />
+                        <Create refresh={getProduits}/>
                     </div>
                 </Col>
             </Row>
@@ -43,7 +65,7 @@ const GestionProducts = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <Read />
+                            <Read listeProduits={listeProduits} refresh={getProduits}/>
                         </tbody>
                     </table>
                 </Col>

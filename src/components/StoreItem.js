@@ -8,21 +8,21 @@ import Button from './Button';
 const truncate = (str) => {
   return str.length > 41 ? str.substring(0, 44) + "..." : str;
 }
-const StoreItem = ({ id, title, src, price }) => {
-  const titleTruncate = truncate(title);
+const StoreItem = ({ id, nom, image, prix }) => {
+  const titleTruncate = truncate(nom);
   const formattedPrice = new Intl.NumberFormat('fr-FR', {
     style: 'currency',
     currency: 'EUR',
-  }).format(price / 100);
+  }).format(prix / 100);
 
   const dispatch = useDispatch();
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src={src} alt={`${title} sticker`} />
+        <Image src={image} alt={`${nom} sticker`} />
       </ImageWrapper>
       <Title>{titleTruncate}</Title>
-      <Button onClick={() => dispatch(addItem({ id, title, price }))}>
+      <Button onClick={() => dispatch(addItem({ id, nom, prix }))}>
         Ajouter au panier — {formattedPrice}
       </Button>
     </Wrapper>

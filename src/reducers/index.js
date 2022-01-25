@@ -67,6 +67,6 @@ export const getKeyword = state => state.keyword;
 export const getItemArray = state => Object.values(state.items);
 export const getSubtotal = state =>
   getItemArray(state).reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => acc + item.prix * item.quantity,
     0
   );
